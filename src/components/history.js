@@ -1,5 +1,12 @@
 import Navbar from "./navbar";
 import "../styles/history.css";
+
+import chwee_kueh from "../images/Chwee_kueh.png";
+import greek_chicken_salad from "../images/greek-chicken-salad.png";
+import fish_soup from "../images/fish-soup.png";
+import kaya_toast from "../images/kaya-toast.png";
+import fried_rice from "../images/fried_rice.png";
+
 import {
   ComposedChart,
   Line,
@@ -16,42 +23,13 @@ import {
 
 const History = () => {
   const data = [
-    {
-      name: "Mon",
-      recommended_amt: 1200,
-      calories: Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200,
-      cnt: 490,
-    },
-    {
-      name: "Tue",
-      recommended_amt: 1200,
-      calories: Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200,
-      cnt: 590,
-    },
-    {
-      name: "Wed",
-      recommended_amt: 1200,
-      calories: Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200,
-      cnt: 350,
-    },
-    {
-      name: "Thu",
-      recommended_amt: 1200,
-      calories: Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200,
-      cnt: 480,
-    },
-    {
-      name: "Fri",
-      recommended_amt: 1200,
-      calories: Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200,
-      cnt: 460,
-    },
-    {
-      name: "Sat",
-      recommended_amt: 1200,
-      calories: Math.floor(Math.random() * (2000 - 1200 + 1)) + 1200,
-      cnt: 380,
-    },
+    { name: "Mon", recommended_amt: 1800, calories: 1950 },
+    { name: "Tue", recommended_amt: 1800, calories: 1870 },
+    { name: "Wed", recommended_amt: 1800, calories: 2000 },
+    { name: "Thu", recommended_amt: 1800, calories: 1750 },
+    { name: "Fri", recommended_amt: 1800, calories: 1820 },
+    { name: "Sat", recommended_amt: 1800, calories: 1900 },
+    { name: "Sun", recommended_amt: 1800, calories: 1850 },
   ];
   const userHistory = [
     {
@@ -62,11 +40,13 @@ const History = () => {
         "Soft-Boiled Eggs",
         "Black Coffee (No Sugar)",
       ],
+      img: kaya_toast,
     },
     {
       date: "2023-12-20",
       meal: "Lunch",
       items: ["Sliced Fish Soup (No Milk)", "Brown Rice", "Steamed Vegetables"],
+      img: fish_soup,
     },
     {
       date: "2023-12-20",
@@ -111,18 +91,45 @@ const History = () => {
                 stroke="#8884d8"
               /> */}
               <Bar dataKey="calories" barSize={20} fill="#bcdfce" />
-              <Line
-                type="monotone"
-                dataKey="recommended_amt"
-                stroke="red"
-              />
+              <Line type="monotone" dataKey="recommended_amt" stroke="red" />
               {/* <Scatter dataKey="cnt" fill="red" /> */}
             </ComposedChart>
           </ResponsiveContainer>
         </div>{" "}
         <div className="history-page-right-col">
           <div className="history-page-right-col">
-            {userHistory.map((entry, index) => (
+            <div className="food-card">
+              {" "}
+              <img src={kaya_toast} alt="Kaya Toast" />
+              <h4>Breakfast: Kaya Toast</h4>
+              <p>2023-12-20</p>
+              <p>Calories: 250</p>
+            </div>
+            <div className="food-card">
+              <img src={fish_soup} alt="Fish Soup" />
+              <h4>
+                Lunch: <br></br>Fish Soup
+              </h4>
+              <p>2023-12-20</p>
+              <p>Calories: 400</p>{" "}
+            </div>{" "}
+            <div className="food-card">
+              {" "}
+              <img src={fried_rice} alt="Fried Rice" />
+              <h4>
+                Dinner: <br></br>Fried Rice
+              </h4>
+              <p>2023-12-20</p>
+              <p>Calories: 500</p>
+            </div>{" "}
+            <div className="food-card">
+              {" "}
+              <img src={greek_chicken_salad} alt="greek-chicken-salad" />
+              <h4>Dinner: Salad</h4>
+              <p>2023-12-20</p>
+              <p>Calories: 500</p>
+            </div>
+            {/* {userHistory.map((entry, index) => (
               <div key={index} className="history-card">
                 <h3>{entry.meal}</h3>
                 <p>
@@ -132,7 +139,7 @@ const History = () => {
                   <strong>Items:</strong> {entry.items.join(", ")}
                 </p>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

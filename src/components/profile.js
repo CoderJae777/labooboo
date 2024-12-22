@@ -5,14 +5,14 @@ import alex from "../images/alex.png";
 
 const ProfileForm = () => {
   const [formData, setFormData] = useState({
-    name: "John Doe",
-    gender: "Male",
-    age: 30,
+    name: "LaBooBoo",
+    gender: "Prefer not to say",
+    age: 25,
     ethnicity: "Chinese",
     country: "Singapore",
-    dietRestrictions: "Vegetarian",
-    medicalConditions: "None",
-    foodPreferences: "Prefers spicy food, loves noodles and soups.",
+    dietRestrictions: "No Beef",
+    medicalConditions: "Hypertension, Depression",
+    foodPreferences: "Japanese, Italian",
     other: "Interested in exploring plant-based diets.",
   });
 

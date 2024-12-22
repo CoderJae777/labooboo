@@ -43,11 +43,28 @@ h1 {
   height: 500px;
 }
 
+.food-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex; /* Add flexbox for layout */
+  align-items: center; /* Align items vertically */
+}
+
+.history-page-right-col img {
+  max-width: 25%;
+  height: auto;
+  margin-right: 10px; /* Add margin for spacing */
+  border-radius: 10px;
+}
 .history-page-right-col {
   flex: 2;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  font-size: 15px;
 }
 
 .history-card {
